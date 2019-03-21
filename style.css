@@ -1,0 +1,147 @@
+* {
+	font-family: 'Inconsolata', monospace;
+}
+
+body {
+	margin: 0;
+	background: black;
+	overflow: hidden;
+}
+
+h1 {
+	color: white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%) scale(2, 2);
+	transition: 0.5s ease-in-out;
+}
+
+h1.top {
+	top: 0;
+	transform: translateX(-50%);
+}
+
+#main {
+	opacity: 0;
+	transition: 0.5s;
+	color: white;
+	margin-top: 60px;
+}
+
+h2 {
+	text-align: center;
+	margin: 0;
+	cursor: default;
+}
+
+.lang-button {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.underline {
+	display: block;
+	height: 2px;
+	margin: 0 auto;
+	width: 0;
+	transition: width .25s linear;
+}
+
+*:hover>.underline, .active>.underline {
+	width: 100%;
+}
+
+line {
+	stroke-width: 5px;
+	stroke-dasharray: 100px;
+	stroke-dashoffset: 100px;
+	stroke-linecap: round;
+}
+
+#rect {
+	transform: translateY(100px);
+	overflow: visible;
+	position: absolute;
+	left: 20px;
+	transition: transform 0.2s linear;
+}
+
+#rectleft, #rectright {
+	transform: translateX(1px) translateY(1px);
+	stroke-width: 2px;
+	stroke: transparent;
+	fill: transparent;
+}
+
+#linedown {
+	position: absolute;
+	opacity: 0;
+}
+
+.lang-panel {
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	margin-top: 120px;
+	position: absolute;
+	width: 100%;
+	z-index: -100;
+	text-align: center;
+}
+.lang-panel.shown {
+	opacity: 1;
+	z-index: 100;
+	visibility: visible;
+}
+
+a {
+	color: inherit;
+	display: inline-block;
+}
+a.d {
+	text-decoration: none;
+}
+
+.lang-desc {
+	width: 40%;
+	margin: 10px auto;
+}
+#nodejs>.lang-desc>span {
+	color: #90c53f;
+}
+#flutter>.lang-desc>span {
+	color: #5ec9f8;
+}
+#htmlcss>.lang-desc>span {
+	color: #f16529;
+}
+#others>.lang-desc>span {
+	color: #ffdd48;
+}
+
+#details {
+	margin-top: 150px;
+	opacity: 1;
+	z-index: 100;
+	transition: all 0.25s ease-in-out;
+}
+#details.gone {
+	opacity: 0;
+	z-index: -100;
+	transform: translateY(10vh);
+}
+
+#rect {
+	z-index: -100;
+}
+#clicktoexit {
+	opacity: 0;
+	z-index: -100;
+	position: absolute;
+	transform: translateX(-50%);
+}
+canvas {
+	left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
