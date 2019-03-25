@@ -12,6 +12,7 @@ for (let button of lang_buttons) {
 	button.addEventListener('click', () => {
 		if (going) return;
 		going = true;
+		clearTimeout(clickToExit.timeout);
 
 		if (button.className.includes('active')) {
 			button.className = 'lang-button';
@@ -52,13 +53,13 @@ for (let button of lang_buttons) {
 		undoPath(0.25);
 		setTimeout(doPath, 250, button.style.color);
 
+		details.classList.add('gone');
 		setTimeout(() => {
 			// Reset lineDown
 			lineDownSvg.style.opacity = '0';
 			lineDown.style.transition = 'initial';
 			lineDown.style.strokeDashoffset = '100px';
 			document.getElementById(button.getAttribute('data-panel')).classList.add('shown');
-			details.classList.add('gone');
 			going = false;
 		}, 500);
 
@@ -123,7 +124,17 @@ function undoPath(seconds) {
 	if (shownPanel) shownPanel.classList.remove('shown');
 }
 
+const projectDivs = document.querySelectorAll('.projects');
+
+function updateProjectDivHeights() {
+	for(let div of projectDivs) {
+		div.style.height = window.innerHeight - div.getBoundingClientRect().y - 30 + 'px';
+	}
+}
+
 window.addEventListener('resize', () => {
 	if (currentEl)
 		setUpPath();
+	updateProjectDivHeights();
 });
+updateProjectDivHeights();
