@@ -197,22 +197,23 @@ canvas {
     right: 0;
 }
 
-.projects>div:hover::before,
-.projects>div:hover::after {
+.projects>div.loaded::before,
+.projects>div.loaded::after {
     width: 100%;
     height: 100%;
+    border-radius: 20px;
 }
 
-.projects>div:hover::before {
+.projects>div.loaded::before {
     border-top-color: #90c53f;
     border-right-color: #90c53f;
-    transition: width 0.125s ease-out, height 0.125s ease-out 0.125s;
+    transition: width 0.125s ease-out, height 0.125s ease-out 0.125s, border-radius 0s ease-out 0.5s;
 }
 
-.projects>div:hover::after {
+.projects>div.loaded::after {
     border-bottom-color: #90c53f;
     border-left-color: #90c53f;
-    transition: border-color 0s ease-out 0.25s, width 0.125s ease-out 0.25s, height 0.125s ease-out 0.325s;
+    transition: border-color 0s ease-out 0.25s, width 0.125s ease-out 0.25s, height 0.125s ease-out 0.325s, border-radius 0s ease-out 0.5s;
 }
 
 .projects.node>div {
