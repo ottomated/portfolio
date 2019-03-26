@@ -144,8 +144,11 @@ function updateProjectDivHeights() {
     for (let div of projectDivs) {
         div.style.height = window.innerHeight - div.getBoundingClientRect().y - 30 + 'px';
     }
+    for (let bar of scrollbars) {
+        bar.update();
+    }
 }
-
+let scrollbars = Array.from(document.querySelectorAll('.projects')).map(bar => new PerfectScrollbar(bar));
 window.addEventListener('resize', () => {
     if (currentEl)
         setUpPath();

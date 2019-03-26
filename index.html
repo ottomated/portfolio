@@ -2,92 +2,88 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Ottomated</title>
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-	<script src="encom-globe.min.js"></script>
-	<script src="grid.js"></script>
-	<script src="data.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ottomated</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <script src="encom-globe.min.js"></script>
+    <script src="grid.js"></script>
+    <script src="data.js"></script>
+
+    <!-- Scrollbar -->
+    <link rel="stylesheet" href="css/perfect-scrollbar.css">
+    <script src="js/perfect-scrollbar.min.js" type="text/javascript"></script>
 </head>
 
 <body>
-	<h1 id="intro">{ }</h1>
-	<div id="main">
-		<h2>I'm a <span id="age"></span> year-old developer</h2>
-		<h2>who uses
-			<span class="lang-button" style="color:#90c53f;" data-panel="nodejs">Node.JS<span class="underline"
+    <h1 id="intro">{ }</h1>
+    <div id="main">
+        <h2>I'm a <span id="age"></span> year-old developer</h2>
+        <h2>who uses
+            <span class="lang-button" style="color:#90c53f;" data-panel="nodejs">Node.JS<span class="underline"
 					style="background-color:#90c53f;"></span></span>,
-			<span class="lang-button" style="color: #5ec9f8;" data-panel="flutter">Flutter<span class="underline"
+            <span class="lang-button" style="color: #5ec9f8;" data-panel="flutter">Flutter<span class="underline"
 					style="background-color:#5ec9f8;"></span></span>,
-			<span class="lang-button" style="color: #f16529;" data-panel="htmlcss">HTML/CSS/JS<span class="underline"
+            <span class="lang-button" style="color: #f16529;" data-panel="htmlcss">HTML/CSS/JS<span class="underline"
 					style="background-color:#f16529;"></span></span>, and
-			<span class="lang-button" style="color: #ffdd48;" data-panel="others">others<span class="underline"
+            <span class="lang-button" style="color: #ffdd48;" data-panel="others">others<span class="underline"
 					style="background-color:#ffdd48;"></span></span>.
-		</h2>
-		<svg id="linedown">
+        </h2>
+        <svg id="linedown">
 			<line x1=0 y1=0 x2=0 y2=100>
 		</svg>
-		<span id="clicktoexit">(click again to exit)</span>
-		<svg id="rect">
+        <span id="clicktoexit">(click again to exit)</span>
+        <svg id="rect">
 			<path id="rectleft" />
 			<path id="rectright" />
 		</svg>
-		<div id="nodejs" class="lang-panel">
-			<h2><a href="https://nodejs.org/en/" target="_blank">Node.JS</a></h2>
-			<h3 class="lang-desc">Node is my language of choice for both <span>quick scripts</span> and for <span>web
-					servers</span> using <a href="https://expressjs.com/" target="_blank">Express</a>. I've been using
-				it for about <span>2 years</span> now, and I'd call myself <span>proficient</span>.</h3>
-			<div class="projects node">
-				<div>
-					<h3>Project 1</h3>
-				</div>
-				<div>
-					<h3>Project 2</h3>
-				</div>
-				<div>
-					<h3>Project 3</h3>
-				</div>
-			</div>
-		</div>
-		<div id="flutter" class="lang-panel">
-			<h2><a href="https://flutter.dev/" target="_blank">Flutter</a></h2>
-			<h3 class="lang-desc">Flutter, Google's framework for creating cross-platform (<span>iOS</span> and
-				<span>Android</span>) <span>mobile apps</span>, is my favorite language to work in. I've created
-				2 public and a few private apps over the <span>9 months</span> I've used it. I'm still learning
-				new things about it, but I'm <span>intermediate</span> overall.
-			</h3>
-		</div>
-		<div id="htmlcss" class="lang-panel">
-			<h2><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML/CSS/JS</a></h2>
-			<h3 class="lang-desc">My first venture into programming, when I was <span>9 years old</span>, was an
-				incredibly awful website that was entirely HTML and a few inline styles. I've gotten just a <i>bit</i>
-				better since then &ndash; I'm still learning design principles, but I'm <span>proficient</span> at this
-				stack.</h3>
-		</div>
-		<div id="others" class="lang-panel">
-			<h2>Other skills</h2>
-			<h3 class="lang-desc">I've also worked in <span>Java</span>, <span>C++</span>, <span>C#</span> (although
-				since switching to Linux I haven't gotten much chance to use it), and a bit of <span>Python</span>.</h3>
-		</div>
-		<div id="details">
-			<h2>Check out my <a href="https://github.com/ottomated" class="d" target="_blank"
-					style="color:#949494;">GitHub<span class="underline" style="background-color:#949494;"></span></a>
-				or <a href="resume.pdf" class="d" target="_blank" style="color:#949494;">Resume<span class="underline"
+        <div id="nodejs" class="lang-panel">
+            <h2><a href="https://nodejs.org/en/" target="_blank">Node.JS</a></h2>
+            <h3 class="lang-desc">Node is my language of choice for both <span>quick scripts</span> and for <span>web
+					servers</span> using <a href="https://expressjs.com/" target="_blank">Express</a>. I've been using it for about <span>2 years</span> now, and I'd call myself <span>proficient</span>.</h3>
+            <div class="projects node">
+                <div class="proj">
+                    <h3>Project 1</h3>
+                </div>
+                <div class="proj">
+                    <h3>Project 2</h3>
+                </div>
+                <div class="proj">
+                    <h3>Project 3</h3>
+                </div>
+            </div>
+        </div>
+        <div id="flutter" class="lang-panel">
+            <h2><a href="https://flutter.dev/" target="_blank">Flutter</a></h2>
+            <h3 class="lang-desc">Flutter, Google's framework for creating cross-platform (<span>iOS</span> and
+                <span>Android</span>) <span>mobile apps</span>, is my favorite language to work in. I've created 2 public and a few private apps over the <span>9 months</span> I've used it. I'm still learning new things about it, but I'm <span>intermediate</span>                overall.
+            </h3>
+        </div>
+        <div id="htmlcss" class="lang-panel">
+            <h2><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML/CSS/JS</a></h2>
+            <h3 class="lang-desc">My first venture into programming, when I was <span>9 years old</span>, was an incredibly awful website that was entirely HTML and a few inline styles. I've gotten just a <i>bit</i> better since then &ndash; I'm still learning design principles,
+                but I'm <span>proficient</span> at this stack.
+            </h3>
+        </div>
+        <div id="others" class="lang-panel">
+            <h2>Other skills</h2>
+            <h3 class="lang-desc">I've also worked in <span>Java</span>, <span>C++</span>, <span>C#</span> (although since switching to Linux I haven't gotten much chance to use it), and a bit of <span>Python</span>.</h3>
+        </div>
+        <div id="details">
+            <h2>Check out my <a href="https://github.com/ottomated" class="d" target="_blank" style="color:#949494;">GitHub<span class="underline" style="background-color:#949494;"></span></a> or <a href="resume.pdf" class="d" target="_blank" style="color:#949494;">Resume<span class="underline"
 						style="background-color:#949494;"></span></a>.</h2>
-			<br>
-			<h2 id="lastseen"></h2>
-				<h2>Want to make something together? <a href="mailto:create@ottomated.net" class="d" target="_blank"
-					style="color:#949494;">Email me!<span class="underline" style="background-color:#949494;"></span></a></h2>
-		</div>
-	</div>
-	<script type="text/javascript" src="js/intro.js"></script>
-	<script type="text/javascript" src="js/age.js"></script>
-	<script type="text/javascript" src="js/langs.js"></script>
-	<script type="text/javascript" src="js/seen.js"></script>
-	<script type="text/javascript" src="js/globe.js"></script>
+            <br>
+            <h2 id="lastseen"></h2>
+            <h2>Want to make something together? <a href="mailto:create@ottomated.net" class="d" target="_blank" style="color:#949494;">Email me!<span class="underline" style="background-color:#949494;"></span></a></h2>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/intro.js"></script>
+    <script type="text/javascript" src="js/age.js"></script>
+    <script type="text/javascript" src="js/langs.js"></script>
+    <script type="text/javascript" src="js/seen.js"></script>
+    <script type="text/javascript" src="js/globe.js"></script>
 </body>
 
 </html>
