@@ -1,222 +1,296 @@
 * {
-    font-family: 'Inconsolata', monospace;
+	font-family: 'Inconsolata', monospace;
 }
 
 body {
-    margin: 0;
-    background: black;
-    overflow: hidden;
+	margin: 0;
+	background: black;
+	overflow: hidden;
 }
 
 h1 {
-    color: white;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%) scale(2, 2);
-    transition: 0.5s ease-in-out;
+	color: white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%) scale(2, 2);
+	transition: 0.5s ease-in-out;
 }
 
 h1.top {
-    top: 0;
-    transform: translateX(-50%);
+	top: 0;
+	transform: translateX(-50%);
 }
 
 #main {
-    opacity: 0;
-    transition: 0.5s;
-    color: white;
-    margin-top: 60px;
+	opacity: 0;
+	transition: 0.5s;
+	color: white;
+	margin-top: 60px;
 }
 
 h2 {
-    text-align: center;
-    margin: 0;
-    cursor: default;
+	text-align: center;
+	margin: 0;
+	cursor: default;
 }
 
 .lang-button {
-    display: inline-block;
-    cursor: pointer;
+	display: inline-block;
+	cursor: pointer;
 }
 
 .underline {
-    display: block;
-    height: 2px;
-    margin: 0 auto;
-    width: 0;
-    transition: width .25s linear;
+	display: block;
+	height: 2px;
+	margin: 0 auto;
+	width: 0;
+	transition: width .25s linear;
 }
 
-*:hover>.underline,
-.active>.underline {
-    width: 100%;
+*:hover>.underline, .active>.underline {
+	width: 100%;
 }
 
 line {
-    stroke-width: 5px;
-    stroke-dasharray: 100px;
-    stroke-dashoffset: 100px;
-    stroke-linecap: round;
+	stroke-width: 5px;
+	stroke-dasharray: 100px;
+	stroke-dashoffset: 100px;
+	stroke-linecap: round;
 }
 
 #rect {
-    transform: translateY(100px);
-    overflow: visible;
-    position: absolute;
-    left: 20px;
-    transition: transform 0.2s linear;
+	transform: translateY(100px);
+	overflow: visible;
+	position: absolute;
+	left: 20px;
+	transition: transform 0.2s linear;
 }
 
-#rectleft,
-#rectright {
-    transform: translateX(1px) translateY(1px);
-    stroke-width: 2px;
-    stroke: transparent;
-    fill: transparent;
+#rectleft, #rectright {
+	transform: translateX(1px) translateY(1px);
+	stroke-width: 2px;
+	stroke: transparent;
+	fill: transparent;
 }
 
 #linedown {
-    position: absolute;
-    opacity: 0;
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
 }
 
 .lang-panel {
-    opacity: 0;
-    transition: opacity 0.5s linear;
-    margin-top: 120px;
-    position: absolute;
-    width: 100%;
-    z-index: -100;
-    text-align: center;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	margin-top: 120px;
+	position: absolute;
+	width: 100%;
+	z-index: -100;
+	text-align: center;
 }
 
 .lang-panel.shown {
-    opacity: 1;
-    z-index: 100;
-    visibility: visible;
+	opacity: 1;
+	z-index: 100;
+	visibility: visible;
 }
 
 a {
-    color: inherit;
-    display: inline-block;
+	color: inherit;
+	display: inline-block;
 }
 
 a.d {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .lang-desc {
-    width: 40%;
-    margin: 10px auto;
+	width: 40%;
+	margin: 10px auto;
 }
 
 #nodejs>.lang-desc>span {
-    color: #90c53f;
+	color: #90c53f;
 }
 
 #flutter>.lang-desc>span {
-    color: #5ec9f8;
+	color: #5ec9f8;
 }
 
 #htmlcss>.lang-desc>span {
-    color: #f16529;
+	color: #f16529;
 }
 
 #others>.lang-desc>span {
-    color: #ffdd48;
+	color: #ffdd48;
 }
 
 #details {
-    margin-top: 50px;
-    opacity: 1;
-    z-index: 100;
-    transition: all 0.125s ease-in-out;
+	margin-top: 50px;
+	opacity: 1;
+	z-index: 100;
+	transition: all 0.125s ease-in-out;
 }
 
 #details.gone {
-    opacity: 0;
-    z-index: -100;
-    transform: translateY(10vh);
+	opacity: 0;
+	z-index: -100;
+	transform: translateY(10vh);
 }
 
 #rect {
-    z-index: -100;
+	z-index: -100;
 }
 
 #clicktoexit {
-    opacity: 0;
-    z-index: -100;
-    position: absolute;
-    transform: translateX(-50%);
+	opacity: 0;
+	z-index: -100;
+	position: absolute;
+	transform: translateX(-50%);
 }
 
 canvas {
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
 }
 
 .projects {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 30px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: relative;
-    justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 30px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	justify-content: space-around;
 }
 
-.projects>.proj {
-    margin: 10px;
-    min-width: 250px;
-    max-width: 350px;
-    height: 250px;
-    background: none;
-    border: 0;
-    box-sizing: border-box;
-    position: relative;
+.proj {
+	margin: 10px;
+	min-width: 250px;
+	max-width: 350px;
+	height: 250px;
+	background: none;
+	border: 0;
+	box-sizing: border-box;
+	background-size: 100% 100%;
+	position: relative;
+	box-shadow: 0 0 0 1000px inset #0000008f, 0 0 45px 0 inset black;
+	border-radius: 20px;
+	background-position: center;
+	cursor: pointer;
+	transition: background-size 0.2s ease-in;
 }
 
-.projects>.proj::before {
-    top: 0;
-    left: 0;
+.proj::before {
+	top: 0;
+	left: 0;
 }
 
-.projects>.proj::before,
-.projects>.proj::after {
-    border: 2px solid transparent;
-    width: 0;
-    height: 0;
-    box-sizing: inherit;
-    content: '';
-    position: absolute;
+.proj:hover {
+	background-size: 120% 120%;
 }
 
-.projects>.proj::after {
-    bottom: 0;
-    right: 0;
+.proj::before, .proj::after {
+	border: 2px solid transparent;
+	width: 0;
+	height: 0;
+	box-sizing: inherit;
+	content: '';
+	position: absolute;
 }
 
-.projects>.proj.loaded::before,
-.projects>.proj.loaded::after {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+.proj::after {
+	bottom: 0;
+	right: 0;
 }
 
-.projects>.proj.loaded::before {
-    border-top-color: #90c53f;
-    border-right-color: #90c53f;
-    transition: width 0.125s ease-out, height 0.125s ease-out 0.125s, border-radius 0s ease-out 0.5s;
+.proj.loaded::before, .proj.loaded::after {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
 }
 
-.projects>.proj.loaded::after {
-    border-bottom-color: #90c53f;
-    border-left-color: #90c53f;
-    transition: border-color 0s ease-out 0.25s, width 0.125s ease-out 0.25s, height 0.125s ease-out 0.325s, border-radius 0s ease-out 0.5s;
+.proj.loaded::before {
+	transition: width 0.125s ease-out, height 0.125s ease-out 0.125s, border-radius .5s ease-out 0.5s;
+}
+
+.proj.loaded::after {
+	transition: border-color 0s ease-out 0.25s, width 0.125s ease-out 0.25s, height 0.125s ease-out 0.325s, border-radius .5s ease-out 0.5s;
+}
+
+.projects.node>.proj.loaded::before {
+	border-top-color: #90c53f;
+	border-right-color: #90c53f;
+}
+
+.projects.node>.proj.loaded::after {
+	border-bottom-color: #90c53f;
+	border-left-color: #90c53f;
+}
+
+.projects.flutter>.proj.loaded::before {
+	border-top-color: #5ec9f8;
+	border-right-color: #5ec9f8;
+}
+
+.projects.flutter>.proj.loaded::after {
+	border-bottom-color: #5ec9f8;
+	border-left-color: #5ec9f8;
+}
+
+.projects.htmlcss>.proj.loaded::before {
+	border-top-color: #f16529;
+	border-right-color: #f16529;
+}
+
+.projects.htmlcss>.proj.loaded::after {
+	border-bottom-color: #f16529;
+	border-left-color: #f16529;
+}
+
+.projects.others>.proj.loaded::before {
+	border-top-color: #ffdd48;
+	border-right-color: #ffdd48;
+}
+
+.projects.others>.proj.loaded::after {
+	border-bottom-color: #ffdd48;
+	border-left-color: #ffdd48;
 }
 
 .projects.node>.proj {
-    border-color: #90c53f;
+	border-color: #90c53f;
+}
+
+/* modal */
+
+#modal {
+	pointer-events: none;
+	opacity: 0;
+	position: absolute;
+	z-index: 1000;
+	background: #000000d0;
+	border-radius: 20px;
+	border: 2px solid #90c53f;
+	width: 90vw;
+	height: 70vh;
+	left: 50%;
+	top: 50%;
+	transition: opacity .25s linear;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+#modal.shown {
+	opacity: 1;
+	pointer-events: initial;
+}
+
+#modal>* {
+	margin: 50px;
+}
+
+#modal>p {
+	line-height: 1.5;
 }
