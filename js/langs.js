@@ -147,7 +147,12 @@ for (let p of projs) {
 		let color = p.parentElement.getAttribute('data-cat');
 		modal.children[0].innerHTML = data.title;
 		modal.children[1].innerHTML = data.description;
-		modal.children[2].firstElementChild.href = data.github;
+		if (data.github) {
+			modal.children[2].style.display = 'block';
+			modal.children[2].firstElementChild.href = data.github;
+		} else {
+			modal.children[2].style.display = 'hidden';
+		}
 		modal.classList = 'shown';
 		modal.classList.add(color);
 		modal.openingElement = p;
