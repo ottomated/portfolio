@@ -8,6 +8,7 @@
 	<title>Ottomated</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js"></script>
 	<script src="encom-globe.min.js"></script>
 	<script src="grid.js"></script>
 	<script src="data.js"></script>
@@ -65,10 +66,10 @@
 				about it, but I'm <span>intermediate</span> overall.
 			</h3>
 			<div class="projects flutter">
-				<div class="proj" style="background-image: url(img/dunabase.png)">
+				<div data-proj="dunabase" class="proj" style="background-image: url(img/dunabase.png)">
 					<h3>Dunabase</h3>
 				</div>
-				<div class="proj" style="background-image: url(img/source.png)">
+				<div data-proj="source_mobile" class="proj" style="background-image: url(img/source.png)">
 					<h3>Source Mobile</h3>
 				</div>
 				<div class="proj" style="background-image: url(img/repertoire.png)">
@@ -119,13 +120,15 @@
 			<br>
 			<h2 id="lastseen"></h2>
 			<h2>Want to make something together? <a href="mailto:create@ottomated.net" class="d" target="_blank"
-					style="color:#949494;">Email me!<span class="underline"
-						style="background-color:#949494;"></span></a></h2>
+					style="color:#949494;">Email me!<span class="underline" style="background-color:#949494;"></span></a></h2>
 		</div>
 		<div id="modal">
-			<h2></h2>
+				<h2></h2>
 			<p></p>
-			<div></div>
+			<div>
+				<a target="_blank"><img src="img/GitHub-Mark-Light-120px-plus.png"></a>
+			</div>
+			<div class="close">X</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/intro.js"></script>

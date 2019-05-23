@@ -146,11 +146,21 @@ for (let p of projs) {
 		let data = ProjectData[p.getAttribute('data-proj')];
 		modal.children[0].innerHTML = data.title;
 		modal.children[1].innerHTML = data.description;
+		modal.children[2].firstElementChild.href = data.github;
 		modal.classList = 'shown';
 		modal.openingElement = p;
-		p.classList.add('');
+		var pattern = Trianglify({
+			width: modal.clientWidth,
+			height: modal.clientHeight,
+			x_colors: ['#000000', '#1a1a1a', '#333333', '#4d4d4d', '#333333', '#1a1a1a', '#000000']
+		});
+		modal.style.background = 'url(' + pattern.png() + ')';
 	});
 }
+
+modal.querySelector('.close').addEventListener('click', () => {
+	modal.classList = '';
+})
 
 
 const projectDivs = document.querySelectorAll('.projects');

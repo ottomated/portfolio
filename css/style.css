@@ -280,6 +280,8 @@ canvas {
 	top: 50%;
 	transition: opacity .25s linear;
 	transform: translateX(-50%) translateY(-50%);
+	overflow: hidden;
+	box-shadow: 0 0 100px 10px black inset;
 }
 
 #modal.shown {
@@ -287,10 +289,29 @@ canvas {
 	pointer-events: initial;
 }
 
+#modal>p {
+	line-height: 1.5;
+	font-size: large;
+}
+
+#modal>div {
+	text-align: center;
+}
+
 #modal>* {
 	margin: 50px;
 }
 
-#modal>p {
-	line-height: 1.5;
+#modal>.close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	line-height: 20px;
+	margin: 0;
+	border: 2px solid #90c53f;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-left-radius: 20px;
+	cursor: pointer;
 }
