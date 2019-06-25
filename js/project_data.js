@@ -57,6 +57,6 @@ const ProjectData = {
 	"ognes": {
 		title: "OGNes",
 		github: "https://github.com/ottomated/OGNes",
-		description: "An NES emulator being written in Java for a school project. It's a WIP right now, but should be finished soon!",
+		description: "An NES emulator written in Java for a school project. It's compatible with most common games, although definitely not perfect.",
 	},
 };
