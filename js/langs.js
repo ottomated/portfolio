@@ -6,14 +6,25 @@ const lineDown = lineDownSvg.firstElementChild;
 const left = document.querySelector('#rectleft');
 const right = document.querySelector('#rectright');
 const details = document.querySelector('#details');
-const clickToExit = document.querySelector('#clicktoexit');
+const langHint = document.querySelector('#langhint');
 const modal = document.querySelector('#modal');
+
+if (!window.localStorage.hideClickToLang) {
+	langHint.langTimeout = setTimeout(() => {
+		langHint.innerText = '(click to view details)';
+		langHint.style.left = '50%';
+		langHint.style.opacity = '0.5';
+	}, 5000);
+}
 
 for (let button of lang_buttons) {
 	button.addEventListener('click', () => {
 		if (going) return;
 		going = true;
-		clearTimeout(clickToExit.timeout);
+		clearTimeout(langHint.langTimeout);
+		langHint.style.opacity = '0';
+		window.localStorage.hideClickToLang = true;
+		clearTimeout(langHint.exitTimeout);
 
 		if (button.className.includes('active')) {
 			button.className = 'lang-button';
@@ -26,8 +37,8 @@ for (let button of lang_buttons) {
 				right.style.stroke = 'transparent';
 				going = false;
 			}, 500);
-			clickToExit.style.opacity = '0';
-			clearTimeout(clickToExit.timeout);
+			langHint.style.opacity = '0';
+			clearTimeout(langHint.exitTimeout);
 			window.localStorage.hideClickToExit = true;
 			return;
 		}
@@ -45,7 +56,7 @@ for (let button of lang_buttons) {
 		lineDown.style.strokeDashoffset = '-100px';
 
 		// Place exit thingy
-		clickToExit.style.left = x + 'px';
+		langHint.style.left = x + 'px';
 
 
 		// Do rectangle path
@@ -75,8 +86,9 @@ for (let button of lang_buttons) {
 
 		// exit thingy timeout
 		if (!window.localStorage.hideClickToExit) {
-			clickToExit.timeout = setTimeout(() => {
-				clickToExit.style.opacity = '0.5';
+			langHint.exitTimeout = setTimeout(() => {
+				langHint.innerText = '(click again to exit)';
+				langHint.style.opacity = '0.5';
 			}, 2500);
 		}
 
@@ -180,3 +192,4 @@ window.addEventListener('resize', () => {
 	updateProjectDivHeights();
 });
 updateProjectDivHeights();
+
