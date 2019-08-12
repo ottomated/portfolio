@@ -273,7 +273,7 @@ canvas {
 	z-index: 1000;
 	background: #000000d0;
 	border-radius: 20px;
-	border: 2px solid #90c53f;
+	border: 2px solid white;
 	width: 90vw;
 	height: 70vh;
 	left: 50%;
@@ -282,6 +282,21 @@ canvas {
 	transform: translateX(-50%) translateY(-50%);
 	overflow: hidden;
 	box-shadow: 0 0 100px 10px black inset;
+}
+#modal.nodejs, #modal.nodejs>.close {
+	border-color: #90c53f;
+}
+
+#modal.flutter, #modal.flutter>.close {
+	border-color: #5ec9f8;
+}
+
+#modal.htmlcss, #modal.htmlcss>.close {
+	border-color: #f16529;
+}
+
+#modal.others, #modal.others>.close {
+	border-color: #ffdd48;
 }
 
 #modal.shown {
@@ -309,9 +324,9 @@ canvas {
 	width: 40px;
 	line-height: 20px;
 	margin: 0;
-	border: 2px solid #90c53f;
-	border-top-color: transparent;
-	border-right-color: transparent;
+	border: 2px solid white;
+	border-top-color: transparent !important;
+	border-right-color: transparent !important;
 	border-bottom-left-radius: 20px;
 	cursor: pointer;
 }

@@ -156,10 +156,17 @@ let projs = document.querySelectorAll('.proj');
 for (let p of projs) {
 	p.addEventListener('click', () => {
 		let data = ProjectData[p.getAttribute('data-proj')];
+		let color = p.parentElement.getAttribute('data-cat');
 		modal.children[0].innerHTML = data.title;
 		modal.children[1].innerHTML = data.description;
-		modal.children[2].firstElementChild.href = data.github;
+		if (data.github) {
+			modal.children[2].style.display = 'block';
+			modal.children[2].firstElementChild.href = data.github;
+		} else {
+			modal.children[2].style.display = 'hidden';
+		}
 		modal.classList = 'shown';
+		modal.classList.add(color);
 		modal.openingElement = p;
 		var pattern = Trianglify({
 			width: modal.clientWidth,
@@ -171,7 +178,7 @@ for (let p of projs) {
 }
 
 modal.querySelector('.close').addEventListener('click', () => {
-	modal.classList = '';
+	modal.classList.remove('shown');
 })
 
 

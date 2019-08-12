@@ -8,7 +8,7 @@
 	<title>Ottomated</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js"></script>
+	<script src="js/trianglify.min.js"></script>
 	<script src="encom-globe.min.js"></script>
 	<script src="grid.js"></script>
 	<script src="data.js"></script>
@@ -17,6 +17,18 @@
 	<!-- Scrollbar -->
 	<link rel="stylesheet" href="css/perfect-scrollbar.css">
 	<script src="js/perfect-scrollbar.min.js" type="text/javascript"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112279351-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-112279351-2');
+	</script>
+
+
 </head>
 
 <body>
@@ -46,7 +58,7 @@
 			<h3 class="lang-desc">Node is my language of choice for both <span>quick scripts</span> and for <span>web
 					servers</span> using <a href="https://expressjs.com/" target="_blank">Express</a>. I've been using
 				it for about <span>2 years</span> now, and I'd call myself <span>proficient</span>.</h3>
-			<div class="projects node">
+			<div class="projects node" data-cat="nodejs">
 				<div data-proj="dickens" class="proj" style="background-image: url(img/dickens.png)">
 					<h3>Dickens Carolers</h3>
 				</div>
@@ -65,14 +77,14 @@
 				public and a few private apps over the <span>9 months</span> I've used it. I'm still learning new things
 				about it, but I'm <span>intermediate</span> overall.
 			</h3>
-			<div class="projects flutter">
+			<div class="projects flutter" data-cat="flutter">
 				<div data-proj="dunabase" class="proj" style="background-image: url(img/dunabase.png)">
 					<h3>Dunabase</h3>
 				</div>
 				<div data-proj="source_mobile" class="proj" style="background-image: url(img/source.png)">
 					<h3>Source Mobile</h3>
 				</div>
-				<div class="proj" style="background-image: url(img/repertoire.png)">
+				<div data-proj="repertoire" class="proj" style="background-image: url(img/repertoire.png)">
 					<h3>Repertoire</h3>
 				</div>
 			</div>
@@ -84,17 +96,14 @@
 				better since then &ndash; I'm still learning design principles,
 				but I'm <span>proficient</span> at this stack.
 			</h3>
-			<div class="projects htmlcss">
-				<div class="proj" style="background-image: url(img/happy.png)">
+			<div class="projects htmlcss" data-cat="htmlcss">
+				<div data-proj="makemehappy" class="proj" style="background-image: url(img/happy.png)">
 					<h3>MakeMeHappy</h3>
 				</div>
-				<div class="proj" style="background-image: url(img/profile.png)">
+				<div data-proj="portfolio" class="proj" style="background-image: url(img/profile.png)">
 					<h3>Portfolio</h3>
 				</div>
-				<div class="proj" style="background-image: url(img/source.png)">
-					<h3>Spurce Mobile<br>(website)</h3>
-				</div>
-				<div class="proj" style="background-image: url(img/minesweeper.png)">
+				<div data-proj="minesweeper_f" class="proj" style="background-image: url(img/minesweeper.png)">
 					<h3>Minesweeper Royale<br>(frontend)</h3>
 				</div>
 			</div>
@@ -103,12 +112,15 @@
 			<h2>Other skills</h2>
 			<h3 class="lang-desc">I've also worked in <span>Java</span>, <span>C++</span>, <span>C#</span> (although
 				since switching to Linux I haven't gotten much chance to use it), and a bit of <span>Python</span>.</h3>
-			<div class="projects others">
-				<div class="proj" style="background-image: url(img/slouch.png)">
+			<div class="projects others" data-cat="others">
+				<div data-proj="antislouch" class="proj" style="background-image: url(img/slouch.png)">
 					<h3>AntiSlouch</h3>
 				</div>
-				<div class="proj" style="background-image: url(img/WIP.png)">
+				<div data-proj="reqlang" class="proj" style="background-image: url(img/WIP.png)">
 					<h3>ReqLang</h3>
+				</div>
+				<div data-proj="ognes" class="proj" style="background-image: url(img/WIP.png)">
+					<h3>OGNes</h3>
 				</div>
 			</div>
 		</div>
@@ -120,10 +132,11 @@
 			<br>
 			<h2 id="lastseen"></h2>
 			<h2>Want to make something together? <a href="mailto:create@ottomated.net" class="d" target="_blank"
-					style="color:#949494;">Email me!<span class="underline" style="background-color:#949494;"></span></a></h2>
+					style="color:#949494;">Email me!<span class="underline"
+						style="background-color:#949494;"></span></a></h2>
 		</div>
 		<div id="modal">
-				<h2></h2>
+			<h2></h2>
 			<p></p>
 			<div>
 				<a target="_blank"><img src="img/GitHub-Mark-Light-120px-plus.png"></a>

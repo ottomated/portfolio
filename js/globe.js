@@ -24,12 +24,12 @@ function animate() {
 let initGlobe = () => {
     globe.init();
     animate();
-    fetch('http://ip-api.com/json/?fields=lat,lon,query').then(r => r.text()).then(r => {
+    fetch('https://ip-api.io/json').then(r => r.text()).then(r => {
         let loc = JSON.parse(r);
-        globe.addMarker(loc.lat, loc.lon, loc.query);
-        fetch('http://ip-api.com/json/ottomated.net?fields=lat,lon,query').then(r => r.text()).then(r => {
+        globe.addMarker(loc.latitude, loc.longitude, loc.ip);
+        fetch('https://ip-api.io/json/209.182.233.230').then(r => r.text()).then(r => {
             let loc2 = JSON.parse(r);
-            globe.addMarker(loc2.lat, loc2.lon, loc2.query, Math.abs(loc.lon - loc2.lon) > 25);
+            globe.addMarker(loc2.latitude, loc2.longitude, loc2.ip, Math.abs(loc.lon - loc2.lon) > 25);
         });
     });
     var constellation = [];
